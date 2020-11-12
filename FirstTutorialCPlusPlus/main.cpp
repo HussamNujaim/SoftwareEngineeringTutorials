@@ -2,6 +2,7 @@
 #include<conio.h>
 #include <cmath>
 #include <vector>
+#include <ctime>
 using namespace std;
 
 
@@ -43,6 +44,26 @@ int * GetMinMaxValue(Table& table)
 return MinMax;
 }
 //////////////////////////////////////////
+// Problem 3:
+void Fibonacci(int rank)
+{
+   int a=0,b=1,c;
+   std::cout<<"The Fibonacci sequence : ";
+   for(int i=0;i<rank;++i)
+   {
+    if(i<2)
+        std::cout<<i<<" "; // prints the first two elements of the sequence
+    else
+    {
+        c=a+b;
+        std::cout<<c<<" ";
+        a=b;
+        b=c;
+    }
+   }
+   std::cout<<std::endl;
+}
+//////////////////////////////////////////////
 
 int main(void)
 {
@@ -53,7 +74,7 @@ int main(void)
     std::cout<<std::endl;
     std::cout<<"The Area = "<<CircleMath(diameter)[0]<<std::endl;
     std::cout<<"The Circumference = "<<CircleMath(diameter)[1]<<std::endl;
-   */
+
     // Problem 2:
     int numberOfRows, numberOfCoulumns;
     std::cout<<"Enter the number of rows: ";
@@ -64,11 +85,12 @@ int main(void)
    // int table[numberOfRows][numberOfCoulumns];
     //Table initialization
     Table table( numberOfRows,vector<int>(numberOfCoulumns,0));
-
+    srand((unsigned int)time(NULL)); //Helps in getting different random numbers each time
     for(int i=0;i<numberOfRows;i++)
     {
         for(int j=0;j<numberOfCoulumns;j++)
         {
+
             table[i][j]=(rand() % 99) + 1;  // Initializing random values to the table
             std::cout<<table[i][j]<<" "; // Displaying the values of the table
         }
@@ -81,6 +103,14 @@ int main(void)
     std::cout<<std::endl;
     std::cout<<"The Maximum value is = " << max;
     std::cout<<std::endl;
+     */
+    ///////////////////////////////////
+    // Problem 3:
+     int rank;
+     std::cout<<"Enter the rank of the Fibonacci sequence ";
+     std::cin>>rank;
+     Fibonacci(rank);
+
 return 0;
 }
 
