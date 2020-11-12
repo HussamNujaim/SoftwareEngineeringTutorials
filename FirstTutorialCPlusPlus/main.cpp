@@ -64,6 +64,16 @@ void Fibonacci(int rank)
    std::cout<<std::endl;
 }
 //////////////////////////////////////////////
+// Problem 4:
+void MultiplicationTable(int number, int range)
+{
+    std::cout<<"The multiplication table of "<<number<<" is: "<<std::endl;
+    for(int i=1;i<=range;i++)
+    {
+        std::cout<<number<<" * "<<i<<" = "<<number*i<<std::endl;
+    }
+    std::cout<<std::endl;
+}
 
 int main(void)
 {
@@ -103,13 +113,22 @@ int main(void)
     std::cout<<std::endl;
     std::cout<<"The Maximum value is = " << max;
     std::cout<<std::endl;
-     */
+
     ///////////////////////////////////
-    // Problem 3:
+    // Problem 3 - Fibonacci sequence:
      int rank;
      std::cout<<"Enter the rank of the Fibonacci sequence ";
      std::cin>>rank;
      Fibonacci(rank);
+ */
+    ///////////////////////////////////
+    // Problem 4 - Multiplicatoin Table:
+    int number,range;
+    std::cout<<"Enter the number: ";
+    std::cin>>number;
+    std::cout<<"Enter the range of the multiplication table: ";
+    std::cin>>range;
+    MultiplicationTable(number,range);
 
 return 0;
 }
